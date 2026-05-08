@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Mail, MapPin, Send, Github, Linkedin, CheckCircle, AlertCircle, Loader } from "lucide-react";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
@@ -9,7 +9,6 @@ const PUBLIC_KEY = "QaDSvUI89k8FjDCUJ";
 
 export default function Contact() {
   const { ref, isVisible } = useScrollAnimation();
-  const formRef = useRef<HTMLFormElement>(null);
 
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -24,7 +23,12 @@ export default function Contact() {
 
     setStatus("loading");
     try {
-      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current!, PUBLIC_KEY);
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        { name: form.name, email: form.email, message: form.message },
+        PUBLIC_KEY
+      );
       setStatus("success");
       setForm({ name: "", email: "", message: "" });
     } catch {
@@ -108,7 +112,6 @@ export default function Contact() {
 
           {/* Right — Form */}
           <form
-            ref={formRef}
             onSubmit={handleSubmit}
             className="bg-white dark:bg-dark-800 border border-cream-300 dark:border-dark-700 rounded-2xl p-8 space-y-5"
           >
