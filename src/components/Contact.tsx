@@ -1,11 +1,6 @@
 import { useState } from "react";
-import emailjs from "@emailjs/browser";
 import { Mail, MapPin, Send, Github, Linkedin, CheckCircle, AlertCircle, Loader } from "lucide-react";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
-
-const SERVICE_ID = "service_33wb82p";
-const TEMPLATE_ID = "dvly00s";
-const PUBLIC_KEY = "QaDSvUI89k8FjDCUJ";
 
 export default function Contact() {
   const { ref, isVisible } = useScrollAnimation();
@@ -23,12 +18,12 @@ export default function Contact() {
 
     setStatus("loading");
     try {
-      await emailjs.send(
-        SERVICE_ID,
-        TEMPLATE_ID,
-        { name: form.name, email: form.email, message: form.message },
-        PUBLIC_KEY
-      );
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error();
       setStatus("success");
       setForm({ name: "", email: "", message: "" });
     } catch {
