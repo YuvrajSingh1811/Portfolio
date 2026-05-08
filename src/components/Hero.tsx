@@ -107,7 +107,7 @@ export default function Hero() {
                 <div className="grid grid-cols-3 gap-3 text-center">
                   {[
                     { value: "1+", label: "Year Experience" },
-                    { value: "FE", label: "Frontend Developer" },
+                    { value: "4+", label: "Projects Built" },
                     { value: "FT", label: "Full-time" },
                   ].map(({ value, label }) => (
                     <div key={label} className="bg-white/5 rounded-2xl py-4">
@@ -123,7 +123,7 @@ export default function Hero() {
                 <div>
                   <p className="text-xs text-cream-400 mb-3 tracking-wide uppercase">Tech Stack</p>
                   <div className="flex flex-wrap gap-2">
-                    {["React.js", "TypeScript", "Tailwind CSS", "Angular", "Next.js", "Git"].map((t) => (
+                    {["React.js", "TypeScript", "Tailwind CSS", "Next.js", "Git"].map((t) => (
                       <span key={t} className="px-3 py-1 rounded-full text-xs bg-white/10 text-cream-200">
                         {t}
                       </span>
