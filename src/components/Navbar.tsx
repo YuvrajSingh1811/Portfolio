@@ -36,7 +36,7 @@ export default function Navbar() {
           {/* Desktop Right */}
           <div className="hidden md:flex items-center gap-3">
             <a
-              href="/resume.pdf"
+              href="/Yuvraj_Resume.pdf"
               download
               className="inline-flex items-center gap-1.5 px-5 py-2 rounded-full text-sm font-medium bg-ink-900 dark:bg-cream-100 text-white dark:text-ink-900 hover:opacity-80 transition-opacity"
             >
@@ -88,7 +88,7 @@ export default function Navbar() {
             ))}
             <div className="pt-3">
               <a
-                href="/resume.pdf"
+                href="/Yuvraj_Resume.pdf"
                 download
                 className="inline-flex items-center gap-1.5 px-5 py-2 rounded-full text-sm font-medium bg-ink-900 dark:bg-cream-100 text-white dark:text-ink-900"
               >

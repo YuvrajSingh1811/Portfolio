@@ -2,8 +2,8 @@ import { ArrowRight, Github, Linkedin, Mail, MapPin, User } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center pt-16 bg-cream-100 dark:bg-dark-950">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full py-20">
+    <section className="bg-cream-100 dark:bg-dark-950">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full pt-32 pb-24">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
           {/* Left — Content */}
@@ -76,7 +76,7 @@ export default function Hero() {
           </div>
 
           {/* Right — Info card */}
-          <div className="animate-fade-in-up animation-delay-400 hidden lg:block">
+          <div className="animate-fade-in-up animation-delay-400">
             <div className="bg-ink-900 dark:bg-dark-800 rounded-3xl p-8 text-cream-100 relative overflow-hidden">
               {/* Decorative blobs */}
               <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-white/5" />
@@ -88,7 +88,7 @@ export default function Hero() {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
-                      <User size={24} className="text-cream-100" />
+                      <User size={28} className="text-cream-100" />
                     </div>
                     <div>
                       <p className="text-xs tracking-widest uppercase text-cream-400">Currently at</p>
@@ -107,7 +107,7 @@ export default function Hero() {
                 <div className="grid grid-cols-3 gap-3 text-center">
                   {[
                     { value: "1+", label: "Year Experience" },
-                    { value: "4+", label: "Projects Built" },
+                    { value: "10+", label: "Projects Built" },
                     { value: "FT", label: "Full-time" },
                   ].map(({ value, label }) => (
                     <div key={label} className="bg-white/5 rounded-2xl py-4">
@@ -123,7 +123,7 @@ export default function Hero() {
                 <div>
                   <p className="text-xs text-cream-400 mb-3 tracking-wide uppercase">Tech Stack</p>
                   <div className="flex flex-wrap gap-2">
-                    {["React.js", "TypeScript", "Tailwind CSS", "Next.js", "Git"].map((t) => (
+                    {["React.js","Next.js", "JavaScript", "CSS", "Tailwind CSS", "TypeScript", "Git"].map((t) => (
                       <span key={t} className="px-3 py-1 rounded-full text-xs bg-white/10 text-cream-200">
                         {t}
                       </span>

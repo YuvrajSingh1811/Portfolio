@@ -17,57 +17,105 @@ const cards = [
     label: "Focus",
     title: "React.js & Modern Frontend",
     sub: "TypeScript · Tailwind CSS",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&q=80",
   },
   {
     label: "Location",
-    title: "Mohali, India",
-    sub: "Open to remote work",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80",
+    title: "Chandigarh, India",
+    sub: "Open to work",
+    image: "https://images.unsplash.com/photo-1588669494151-f4c6df6f715b?w=600&q=80",
   },
 ];
+
+function RevealLine({ children, delay, className = "" }: { children: React.ReactNode; delay: number; className?: string }) {
+  return (
+    <span className="block overflow-hidden pb-1">
+      <span
+        className={`block ${className}`}
+        style={{
+          transform: "translateY(110%)",
+          animation: `text-reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms forwards`,
+        }}
+      >
+        {children}
+      </span>
+    </span>
+  );
+}
 
 export default function About() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
     <section id="about" className="py-24 bg-cream-50 dark:bg-dark-900">
-      <div
-        ref={ref}
-        className={`max-w-6xl mx-auto px-4 sm:px-6 transition-all duration-700 ${
-          isVisible ? "animate-fade-in-up" : "opacity-0"
-        }`}
-      >
+      <div ref={ref} className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-          {/* Left */}
+          {/* Left — mask reveal per line */}
           <div>
-            <p className="text-xs font-medium tracking-[0.2em] uppercase text-ink-300 dark:text-dark-500 mb-4">
-              — About
-            </p>
+            {/* Label */}
+            <div className="overflow-hidden mb-4">
+              <p
+                className="text-xs font-medium tracking-[0.2em] uppercase text-ink-300 dark:text-dark-500"
+                style={{
+                  transform: "translateY(110%)",
+                  display: "block",
+                  animation: isVisible ? "text-reveal 0.7s cubic-bezier(0.16,1,0.3,1) 0ms forwards" : "none",
+                }}
+              >
+                — About
+              </p>
+            </div>
+
+            {/* Heading — each line reveals separately */}
             <h2 className="font-serif text-4xl sm:text-5xl text-ink-900 dark:text-cream-100 leading-[1.15] mb-8">
-              Crafting interfaces<br />
-              people love to use
+              {isVisible ? (
+                <>
+                  <RevealLine delay={100}>Crafting interfaces</RevealLine>
+                  <RevealLine delay={200}>people love to use</RevealLine>
+                </>
+              ) : (
+                <span className="opacity-0">Crafting interfaces<br />people love to use</span>
+              )}
             </h2>
-            <p className="text-ink-500 dark:text-dark-400 leading-relaxed mb-5 text-base">
+
+            {/* Paragraphs */}
+            <div
+              className="text-ink-500 dark:text-dark-400 leading-relaxed mb-5 text-base"
+              style={{
+                opacity: 0,
+                animation: isVisible ? "fade-in-up 0.7s ease forwards 400ms" : "none",
+              }}
+            >
               I'm a Computer Science graduate currently working as a Frontend
               Developer at Viithiisys Technologies. I build responsive web
-              applications using React.js, Tailwind CSS, and modern frontend
-              tools.
-            </p>
-            <p className="text-ink-500 dark:text-dark-400 leading-relaxed text-base">
+              applications using React.js, Tailwind CSS, and modern frontend tools.
+            </div>
+            <div
+              className="text-ink-500 dark:text-dark-400 leading-relaxed text-base"
+              style={{
+                opacity: 0,
+                animation: isVisible ? "fade-in-up 0.7s ease forwards 520ms" : "none",
+              }}
+            >
               I enjoy creating clean user interfaces and integrating APIs to
               deliver real-world functionality. I'm currently expanding my
               skills into backend development with Node.js and Express.js.
-            </p>
+            </div>
           </div>
 
-          {/* Right — Cards */}
-          <div className="grid grid-cols-2 gap-3">
+          {/* Right — 3D perspective cards */}
+          <div className="grid grid-cols-2 gap-3" style={{ perspective: "1000px" }}>
             {cards.map((card, i) => (
               <div
                 key={i}
                 className="relative rounded-2xl overflow-hidden group cursor-default aspect-square"
+                style={{
+                  opacity: 0,
+                  animation: isVisible
+                    ? `card-3d-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) ${180 + i * 120}ms forwards`
+                    : "none",
+                }}
               >
                 <div
                   className="absolute inset-0 bg-cover bg-center scale-100 group-hover:scale-105 transition-transform duration-700"

@@ -84,23 +84,24 @@ export const projects = [
 
 export const certifications = [
   {
-    title: "Frontend Development",
-    issuer: "Relevant Platform",
-    date: "2024",
-    link: "#",
-  },
-  {
-    title: "React.js Certification",
-    issuer: "Relevant Platform",
-    date: "2024",
-    link: "#",
-  },
-  {
-    title: "JavaScript Fundamentals",
-    issuer: "Relevant Platform",
+    title: "AWS Academy Cloud Architecting",
+    issuer: "Amazon Web Services",
     date: "2023",
-    link: "#",
+    link: "/AWS_Certification.pdf",
   },
+   {
+    title: "Frontend Development",
+    issuer: "Completion Certificate",
+    date: "2024",
+    link: "/Frontend.certification.pdf",
+  },
+  {
+    title: "Gemini for Google Workspace",
+    issuer: "Google",
+    date: "2025",
+    link: "/Gemini.certification.pdf",
+  },
+ 
 ];
 
 export const socialLinks = [

@@ -11,11 +11,13 @@ export default function Skills() {
   const [active, setActive] = useState<keyof typeof skills>(categories[0]);
   const btnRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const [pill, setPill] = useState({ left: 0, width: 0 });
+  const [animKey, setAnimKey] = useState(0);
 
   useEffect(() => {
     const i = categories.indexOf(active);
     const btn = btnRefs.current[i];
     if (btn) setPill({ left: btn.offsetLeft, width: btn.offsetWidth });
+    setAnimKey((k) => k + 1);
   }, [active]);
 
   return (
@@ -39,7 +41,6 @@ export default function Skills() {
         {/* Tabs */}
         <div className="flex justify-center mb-12">
           <div className="relative inline-flex items-center p-1.5 rounded-full bg-cream-200 dark:bg-dark-800">
-            {/* Sliding pill indicator */}
             <div
               className="absolute top-1.5 bottom-1.5 bg-ink-900 dark:bg-cream-100 rounded-full transition-all duration-300 ease-in-out"
               style={{ left: pill.left, width: pill.width }}
@@ -62,13 +63,20 @@ export default function Skills() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-          {skills[active].map((skill) => {
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 pt-2">
+          {skills[active].map((skill, index) => {
             const Icon = skill.icon;
+            const animations = ["skill-card-0", "skill-card-1", "skill-card-2", "skill-card-3"];
             return (
               <div
-                key={skill.name}
-                className="group flex flex-col items-center gap-3 p-6 rounded-2xl bg-white dark:bg-dark-800 border border-cream-300 dark:border-dark-700 hover:border-ink-900 dark:hover:border-cream-300 hover:-translate-y-1 hover:shadow-sm transition-all duration-300 cursor-default"
+                key={`${animKey}-${skill.name}`}
+                className="group flex flex-col items-center gap-3 p-6 rounded-2xl bg-white dark:bg-dark-800 border border-cream-300 dark:border-dark-700 hover:border-ink-900 dark:hover:border-cream-300 hover:-translate-y-1 hover:shadow-sm transition-[border,box-shadow,transform] duration-300 cursor-default"
+                style={{
+                  opacity: 0,
+                  animation: isVisible
+                    ? `${animations[index % 4]} 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) ${index * 80}ms forwards`
+                    : "none",
+                }}
               >
                 <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-cream-100 dark:bg-dark-900 group-hover:scale-110 transition-transform duration-300">
                   <Icon
