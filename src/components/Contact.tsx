@@ -80,7 +80,7 @@ export default function Contact() {
                 <div>
                   <p className="text-xs text-ink-300 dark:text-dark-600 mb-0.5">Location</p>
                   <p className="text-sm font-medium text-ink-700 dark:text-cream-200">
-                    Mohali, Punjab, India
+                    Chandigarh, Punjab, India
                   </p>
                 </div>
               </div>
