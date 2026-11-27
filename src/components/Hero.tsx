@@ -23,7 +23,7 @@ export default function Hero() {
             </h1>
 
             <p className="text-lg text-ink-500 dark:text-dark-400 mb-3 font-medium">
-              Frontend Developer
+              Full Stack Developer
             </p>
             <p className="text-base text-ink-500 dark:text-dark-500 max-w-md leading-relaxed mb-10">
               Building responsive, modern web applications with React.js &
