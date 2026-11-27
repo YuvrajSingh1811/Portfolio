@@ -19,7 +19,7 @@ export default function Footer() {
               Yuvraj Singh
             </a>
             <p className="text-sm text-cream-400 leading-relaxed max-w-xs">
-              Frontend Developer building modern, responsive web applications
+              Full Stack Developer building modern, responsive web applications
               with clean UI and great user experiences.
             </p>
           </div>
