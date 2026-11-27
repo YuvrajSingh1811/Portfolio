@@ -2,7 +2,7 @@ import {
   SiJavascript, SiHtml5, SiTypescript,
   SiReact, SiTailwindcss, SiNextdotjs,
   SiGit, SiGithub, SiPostman,
-  SiVite,
+  SiVite, SiNodedotjs, SiNestjs, SiMongodb,
 } from "react-icons/si";
 import { FaCss3Alt } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
@@ -28,6 +28,11 @@ export const skills = {
     { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
     { name: "Next.js", icon: SiNextdotjs, color: "#000000" },
     { name: "Vite", icon: SiVite, color: "#646CFF" },
+  ],
+  Backend: [
+    { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
+    { name: "NestJS", icon: SiNestjs, color: "#E0234E" },
+    { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
   ],
   Tools: [
     { name: "Git", icon: SiGit, color: "#F05032" },
@@ -57,7 +62,7 @@ export const projects = [
     description:
       "Built a 50+ screen healthcare admin console for bookings, lab workflow queues, and patient records. Developed a medical review workspace to edit AI-generated reports, scores, and action plans before release. Designed REST APIs in NestJS with MongoDB and JWT auth, driving dynamic per-module role permissions. Implemented S3 media uploads, FCM push notifications, and client-side PDF report generation.",
     tech: ["React.js", "Next.js", "NestJS", "MongoDB"],
-    demo: "",
+    demo: "https://admin.agelign.ai",
   },
   {
     title: "Royal York CRM",
