@@ -123,7 +123,7 @@ export default function Hero() {
                 <div>
                   <p className="text-xs text-cream-400 mb-3 tracking-wide uppercase">Tech Stack</p>
                   <div className="flex flex-wrap gap-2">
-                    {["React.js","Next.js", "JavaScript", "CSS", "Tailwind CSS", "TypeScript", "Git"].map((t) => (
+                    {["React.js","Next.js", "JavaScript", "CSS", "Tailwind CSS", "TypeScript", "Node.js", "NestJS", "MongoDB", "Git"].map((t) => (
                       <span key={t} className="px-3 py-1 rounded-full text-xs bg-white/10 text-cream-200">
                         {t}
                       </span>
