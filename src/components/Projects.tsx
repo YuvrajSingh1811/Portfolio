@@ -34,6 +34,7 @@ export default function Projects() {
                 <span className="font-serif text-4xl font-semibold text-cream-300 dark:text-dark-700 leading-none">
                   {String(idx + 1).padStart(2, "0")}
                 </span>
+                {project.demo && (
                 <a
                   href={project.demo}
                   target="_blank"
@@ -43,6 +44,7 @@ export default function Projects() {
                   Live Site
                   <ArrowUpRight size={13} />
                 </a>
+                )}
               </div>
 
               <h3 className="font-serif text-2xl font-semibold text-ink-900 dark:text-cream-100 mb-3 group-hover:text-ink-700 dark:group-hover:text-cream-200 transition-colors">
