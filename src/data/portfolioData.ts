@@ -39,7 +39,7 @@ export const skills = {
 
 export const experience = [
   {
-    role: "Frontend Developer",
+    role: "Full Stack Developer",
     company: "Viithiisys Technologies",
     period: "Present",
     responsibilities: [
@@ -53,32 +53,32 @@ export const experience = [
 
 export const projects = [
   {
+    title: "Agelign",
+    description:
+      "Built a 50+ screen healthcare admin console for bookings, lab workflow queues, and patient records. Developed a medical review workspace to edit AI-generated reports, scores, and action plans before release. Designed REST APIs in NestJS with MongoDB and JWT auth, driving dynamic per-module role permissions. Implemented S3 media uploads, FCM push notifications, and client-side PDF report generation.",
+    tech: ["React.js", "Next.js", "NestJS", "MongoDB"],
+    demo: "",
+  },
+  {
     title: "Royal York CRM",
     description:
-      "Built a multi-role CRM dashboard for Royal York Property Management. Implemented real-time messaging (Chats, Calls, Dialpad) and activity tracking. Integrated AI that auto-generates estimated time and cost based on user-filled work order form fields.",
-    tech: ["React.js", "Real-time Messaging", "AI Integration", "REST APIs"],
+      "Built a multi-role CRM dashboard for Royal York Property Management. Implemented real-time messaging (chats, calls, dialpad) and activity tracking. Integrated AI that auto-generates estimated time and cost based on user-filled work order form fields.",
+    tech: ["React.js"],
     demo: "https://crm.royalyorkpropertymanagement.ca/",
   },
   {
     title: "Dr. B. Lal Clinical Laboratory",
     description:
-      "Built patient-facing website with test booking, home collection and health score features. Developed admin dashboard managing 371 blogs, banners, FAQs and careers section. Used Next.js SSR for SEO-optimized rendering of patient-facing pages.",
-    tech: ["Next.js", "SSR", "Admin Dashboard", "SEO"],
+      "Built a patient-facing website with test booking, home collection, and health score features. Developed an admin dashboard managing 371+ blogs, banners, FAQs, and careers section. Used Next.js SSR for SEO-optimized rendering of patient-facing pages.",
+    tech: ["Next.js"],
     demo: "https://blallab.com/",
   },
   {
-    title: "InnerBhakti Dashboard",
+    title: "Innerbhakti",
     description:
-      "Integrated APIs for handling payment status (Paid/Unpaid) and subscription details in real time. Implemented user management features including view, search, edit, delete, subscription tracking, and CSV export.",
-    tech: ["React.js", "REST APIs", "Payment Integration", "CSV Export"],
+      "Integrated APIs for handling payment status (paid/unpaid) and subscription details in real time. Implemented user management features: view, search, edit, delete, subscription tracking, and CSV export.",
+    tech: ["React.js"],
     demo: "https://dashboard.innerbhakti.com/",
-  },
-  {
-    title: "Zeko Hotel Management",
-    description:
-      "Developed a Hotel Management Dashboard with analytics to manage hotel operations, orders, and departments. Built a complete hotel management system covering bookings, orders, staff, and guest services.",
-    tech: ["React.js", "Next.js", "Analytics", "Dashboard"],
-    demo: "https://dashboard.zeko.tech",
   },
 ];
 
