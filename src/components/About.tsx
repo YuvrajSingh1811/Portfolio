@@ -9,7 +9,7 @@ const cards = [
   },
   {
     label: "Current Role",
-    title: "Frontend Developer",
+    title: "Full Stack Developer",
     sub: "Viithiisys Technologies",
     image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80",
   },
@@ -87,8 +87,7 @@ export default function About() {
                 animation: isVisible ? "fade-in-up 0.7s ease forwards 400ms" : "none",
               }}
             >
-              I'm a Computer Science graduate currently working as a Frontend
-              Developer at Viithiisys Technologies. I build responsive web
+              I'm a Computer Science graduate currently working as a Full Stack Developer at Viithiisys Technologies. I build responsive web
               applications using React.js, Tailwind CSS, and modern frontend tools.
             </div>
             <div
